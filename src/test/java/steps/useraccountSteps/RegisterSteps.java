@@ -2,34 +2,23 @@ package steps.useraccountSteps;
 
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.When;
-import pages.HomePage;
-import steps.RunnerHelper;
-import pages.RegisterPage;
+import utils.Helper;
 
 public class RegisterSteps {
 
-    private RegisterPage registerPage;
-    private HomePage homePage;
-
-    public RegisterSteps(){
-        homePage = new HomePage(RunnerHelper.driver);
-        registerPage = new RegisterPage(RunnerHelper.driver);
-    }
-
     @When("^I enter to register page$")
     public void IEnterToRegisterPage(){
-        homePage.registerUser();
+        Helper.getRegisterPage();
     }
 
-
-    @And("^I fill all the fields except for \"celular\"")
-    public void IFillAllTheFieldsExceptForCelular(){
-        //RegisterPage registerPage = new RegisterPage(RunnerHelper.driver);
-        registerPage.completeForm();
+    @When("^I complete birthday, day with \"([^\"]*)\", " +
+            "month with \"([^\"]*)\", year with \"([^\"]*)\"$")
+    public void setBirthday(String day, String month, String year){
+        Helper.setBirthday(day, month, year);
     }
 
     @And("^I try to save my data$")
     public void ITryToSaveMyData(){
-        registerPage.saveData();
+        Helper.completeForm();
     }
 }

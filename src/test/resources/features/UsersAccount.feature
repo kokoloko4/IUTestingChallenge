@@ -8,12 +8,22 @@ Feature: Users account
   @Execute
   Scenario: Invalid registration
     When I enter to register page
-    And I fill all the fields except for "celular"
+    And I complete "name" with "Andres"
+    And I complete "fathersLastName" with "Cocunubo"
+    And I complete "mothersLastName" with "Quintero"
+    And I complete "email" with "example@example.com"
+    And I complete "password" with "clave123"
+    And I complete "confirmPassword" with "clave123"
+    And I complete "id" with "123456789"
+    And I complete "gender" with "Hombre"
+    And I complete birthday, day with "2", month with "05", year with "1998"
     And I try to save my data
     Then I should see an error message
 
   Scenario:Successful sign in
-    When I sign in with valid credentials
+    When I enter in login form
+    And I complete "email" with "challengecorreo@gmail.com"
+    And I complete "password" with "clavechallenge"
     Then I should be signed in
 
   Scenario: Unsuccessful sign in

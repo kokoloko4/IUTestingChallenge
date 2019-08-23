@@ -12,7 +12,6 @@ public class HomePage extends BasePage {
     @FindBy(id = "header-login-modal")
     private WebElement loginButton;
 
-
     public HomePage(WebDriver driver) {
         super(driver);
     }
@@ -23,6 +22,14 @@ public class HomePage extends BasePage {
         webDriverWait.until(ExpectedConditions
                 .visibilityOfElementLocated(By.xpath("//*[@class=\"Modal__modalcontent__2yJz6\"]")));
     }
+
+    public Boolean loadPage(){
+        if(driver.findElement(By.xpath("//*[@class='fb-masthead__util-bar__link fb-masthead__util-bar__link--logo']")).isDisplayed()){
+            return true;
+        }
+        return false;
+    }
+
     public RegisterPage registerUser(){
         loginPopup();
         WebElement registerButton = driver.findElement(By.xpath("//*[@class=\"Login__createAccount__38c2o\"]/a"));
