@@ -2,19 +2,22 @@ package steps;
 
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
+
+import io.cucumber.core.api.Scenario;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-
-import java.io.IOException;
 
 public class RunnerHelper {
 
     public static WebDriver driver;
 
     @Before
-    public void setup() throws IOException {
+    public void setup() {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
+        driver.get("https://www.falabella.com.co");
     }
 
     @After

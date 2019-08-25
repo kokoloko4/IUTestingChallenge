@@ -8,7 +8,6 @@ public class BaseHomePage {
 
     public BaseHomePage(WebDriver driver) {
         this.driver = driver;
-        this.driver.get("https://www.falabella.com.co");
-        PageFactory.initElements(driver, this);
+        PageFactory.initElements(this.driver, this);
     }
 }

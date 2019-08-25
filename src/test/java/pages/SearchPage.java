@@ -30,7 +30,10 @@ public class SearchPage extends BaseHomePage {
     public void filterByPrice(String min, String max){
         List<WebElement> filters = filterBar.findElements(By.xpath("//*[@class='fb-filter_container']"));
         filters.get(5).click();
-        List<WebElement> ranges = driver.findElements(By.xpath("//div[contains(@class, 'fb-filter_container')]/div[contains(@class, 'fb-filter-list')]/ul[contains(@class, 'border-filter')]/div[contains(@class, 'content-text-verticalFilter')][1]/li[contains(@class, 'fb-form__input--checkbox fb-form__input-row')]/label"));
+        List<WebElement> ranges = driver.findElements(By.xpath("//div[contains(@class, 'fb-filter_container')]" +
+                "/div[contains(@class, 'fb-filter-list')]/ul[contains(@class, 'border-filter')]" +
+                "/div[contains(@class, 'content-text-verticalFilter')][1]" +
+                "/li[contains(@class, 'fb-form__input--checkbox fb-form__input-row')]/label"));
         ranges.get(4).click();
     }
 

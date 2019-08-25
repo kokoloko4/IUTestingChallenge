@@ -2,6 +2,7 @@ package steps.useraccountSteps;
 
 import cucumber.api.java.en.Then;
 import helpers.HelperUserAccount;
+import org.openqa.selenium.TakesScreenshot;
 
 import static org.junit.Assert.assertThat;
 

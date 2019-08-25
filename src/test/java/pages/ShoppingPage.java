@@ -40,6 +40,6 @@ public class ShoppingPage extends BaseShoppingBagPage {
     }
 
     private WebDriverWait getWebDriverWait(){
-        return new WebDriverWait(driver, 3);
+        return new WebDriverWait(driver, 5);
     }
 }

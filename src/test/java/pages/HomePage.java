@@ -31,7 +31,8 @@ public class HomePage extends BaseHomePage {
     }
 
     public Boolean loadPage(){
-        if(driver.findElement(By.xpath("//*[@class='fb-masthead__util-bar__link fb-masthead__util-bar__link--logo']")).isDisplayed()){
+        if(driver.findElement(By.xpath(
+                "//*[@class='fb-masthead__util-bar__link fb-masthead__util-bar__link--logo']")).isDisplayed()){
             return true;
         }
         return false;

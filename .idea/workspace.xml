@@ -2,36 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7d2e5556-315f-451e-a589-8ff7506b57d6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/helpers/HelperSearchProduct.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/helpers/HelperShoppingBag.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/helpers/HelperShoppingProcess.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/helpers/HelperUserAccount.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/pages/BaseProductPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/pages/BaseShoppingBagPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/pages/ProductPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/pages/SearchPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/pages/ShoppingPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/steps/searchproductsSteps/FilterSteps.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/steps/shoppingprocessSteps/ShoppingBagSteps.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/steps/useraccountSteps/SigninSteps.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/steps/useraccountSteps/SignoutSteps.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/helpers/ReadPropertiesFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/utils/ReadPropertiesFile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pages/BasePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/BaseHomePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/helpers/HelperUserAccount.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/helpers/HelperUserAccount.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pages/BaseHomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/BaseHomePage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/pages/HomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/HomePage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pages/RegisterPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/RegisterPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/runner/Runner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/runner/Runner.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/steps/CommonSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/steps/CommonSteps.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pages/SearchPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/SearchPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pages/ShoppingPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/ShoppingPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/steps/RunnerHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/steps/RunnerHelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/steps/useraccountSteps/LoginSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/steps/useraccountSteps/LoginSteps.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/steps/useraccountSteps/PopulateSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/steps/useraccountSteps/PopulateSteps.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/steps/useraccountSteps/RegisterSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/steps/useraccountSteps/RegisterSteps.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/steps/useraccountSteps/SaveRegistrySteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/steps/useraccountSteps/SaveRegistrySteps.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/utils/Helper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/config.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/config.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/features/SearchProducts.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/SearchProducts.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/features/ShoppingProcess.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/ShoppingProcess.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/features/UsersAccount.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/UsersAccount.feature" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -98,7 +76,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Cucumber java.Scenario: Add a product to the shopping bag">
+  <component name="RunManager" selected="Cucumber java.Scenario: Delete a product from the shopping bag">
     <configuration name="Scenario: Add a product to the shopping bag" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="4" />
       <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/ShoppingProcess.feature" />
@@ -118,25 +96,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Scenario: Add a product to the shopping cart" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
-      <option name="CUCUMBER_CORE_VERSION" value="4" />
-      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/ShoppingProcess.feature" />
-      <option name="GLUE" value="steps" />
-      <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
-      <module name="UITestingChallenge" />
-      <option name="NAME_FILTER" value="^Add a product to the shopping cart$" />
-      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm4SMFormatter --name &quot;^Add a product to the shopping cart$&quot;" />
-      <option name="SUGGESTED_NAME" value="Scenario: Add a product to the shopping cart" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="cucumber.api.cli.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="Scenario: Delete a product from the shopping bag" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="4" />
       <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/ShoppingProcess.feature" />
@@ -146,25 +105,6 @@
       <option name="NAME_FILTER" value="^Delete a product from the shopping bag$" />
       <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm4SMFormatter --name &quot;^Delete a product from the shopping bag$&quot;" />
       <option name="SUGGESTED_NAME" value="Scenario: Delete a product from the shopping bag" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="cucumber.api.cli.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Scenario: Filter the price" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
-      <option name="CUCUMBER_CORE_VERSION" value="4" />
-      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/SearchProducts.feature" />
-      <option name="GLUE" value="steps" />
-      <option name="MAIN_CLASS_NAME" value="cucumber.api.cli.Main" />
-      <module name="UITestingChallenge" />
-      <option name="NAME_FILTER" value="^Filter the price$" />
-      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm4SMFormatter --name &quot;^Filter the price$&quot;" />
-      <option name="SUGGESTED_NAME" value="Scenario: Filter the price" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="cucumber.api.cli.*" />
@@ -195,20 +135,58 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Scenario: Successful sign out" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+      <option name="CUCUMBER_CORE_VERSION" value="4" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/UsersAccount.feature" />
+      <option name="GLUE" value="steps" />
+      <option name="MAIN_CLASS_NAME" value="cucumber.api.cli.Main" />
+      <module name="UITestingChallenge" />
+      <option name="NAME_FILTER" value="^Successful sign out$" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm4SMFormatter --name &quot;^Successful sign out$&quot;" />
+      <option name="SUGGESTED_NAME" value="Scenario: Successful sign out" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cucumber.api.cli.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Scenario: Unsuccessful sign in" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+      <option name="CUCUMBER_CORE_VERSION" value="4" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/UsersAccount.feature" />
+      <option name="GLUE" value="steps" />
+      <option name="MAIN_CLASS_NAME" value="cucumber.api.cli.Main" />
+      <module name="UITestingChallenge" />
+      <option name="NAME_FILTER" value="^Unsuccessful sign in$" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm4SMFormatter --name &quot;^Unsuccessful sign in$&quot;" />
+      <option name="SUGGESTED_NAME" value="Scenario: Unsuccessful sign in" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cucumber.api.cli.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
       <item itemvalue="Cucumber java.Scenario: Invalid registration" />
-      <item itemvalue="Cucumber java.Scenario: Filter the price" />
-      <item itemvalue="Cucumber java.Scenario: Add a product to the shopping cart" />
       <item itemvalue="Cucumber java.Scenario: Add a product to the shopping bag" />
+      <item itemvalue="Cucumber java.Scenario: Unsuccessful sign in" />
+      <item itemvalue="Cucumber java.Scenario: Successful sign out" />
       <item itemvalue="Cucumber java.Scenario: Delete a product from the shopping bag" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Cucumber java.Scenario: Add a product to the shopping bag" />
         <item itemvalue="Cucumber java.Scenario: Delete a product from the shopping bag" />
+        <item itemvalue="Cucumber java.Scenario: Add a product to the shopping bag" />
         <item itemvalue="Cucumber java.Scenario: Invalid registration" />
-        <item itemvalue="Cucumber java.Scenario: Add a product to the shopping cart" />
-        <item itemvalue="Cucumber java.Scenario: Filter the price" />
+        <item itemvalue="Cucumber java.Scenario: Successful sign out" />
+        <item itemvalue="Cucumber java.Scenario: Unsuccessful sign in" />
       </list>
     </recent_temporary>
   </component>
@@ -224,7 +202,7 @@
       <updated>1566475410418</updated>
       <workItem from="1566615926128" duration="1148000" />
       <workItem from="1566622781618" duration="1210000" />
-      <workItem from="1566657408764" duration="42638000" />
+      <workItem from="1566657408764" duration="50462000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1566475638417</created>
@@ -261,7 +239,14 @@
       <option name="project" value="LOCAL" />
       <updated>1566507656075</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="User accounts feature, Filter feature and shopping proccess complete.">
+      <created>1566702125386</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1566702125386</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -283,7 +268,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial commit" />
     <MESSAGE value="First try registry feature" />
-    <option name="LAST_COMMIT_MESSAGE" value="First try registry feature" />
+    <MESSAGE value="User accounts feature, Filter feature and shopping proccess complete." />
+    <option name="LAST_COMMIT_MESSAGE" value="User accounts feature, Filter feature and shopping proccess complete." />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />

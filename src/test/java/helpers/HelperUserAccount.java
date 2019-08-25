@@ -1,9 +1,11 @@
 package helpers;
 
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import pages.HomePage;
 import pages.RegisterPage;
 import steps.RunnerHelper;
+
 
 import static org.hamcrest.core.IsEqual.equalTo;
 import static org.junit.Assert.assertThat;
@@ -25,7 +27,7 @@ public class HelperUserAccount {
 
     public static void getRegisterPage() {
         registerPage = homePage.registerUser();
-        assertTrue(registerPage.loadPage());
+        assertTrue("Register page did not load", registerPage.loadPage());
     }
 
     public static void completeField(String fieldName, String value, String form){
@@ -52,6 +54,7 @@ public class HelperUserAccount {
     public static void verifyThatPhoneIsMissing(){
         assertThat("The message of missing phone number is missing",
                 registerPage.getErrorMessage(), equalTo("Debes ingresar un celular"));
+        TakesScreenshot screenshot = ((TakesScreenshot) driver);
     }
 
     public static void completeLoginForm(){
