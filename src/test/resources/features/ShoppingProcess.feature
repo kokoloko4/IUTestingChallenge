@@ -1,12 +1,14 @@
 Feature: Shopping process
   As an user I want to buy products
 
-  Scenario: Add a product to the shopping cart
+  Background:
     Given I am in a product page
-    When I add the product to the cart
+
+  Scenario: Add a product to the shopping bag
+    When I add the product to the bag
     Then I should see a pop up with the confirmation
 
-  Scenario: Add a product to the shopping cart
-    Given I have a product in my shopping cart
-    When I delete the product
-    Then I should see a message saying that my cart is empty
+  Scenario: Delete a product from the shopping bag
+    When I have a product in my shopping bag
+    And I delete the product
+    Then I should see a message saying that my bag is empty

@@ -5,7 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class RegisterPage extends BasePage {
+public class RegisterPage extends BaseHomePage {
 
     @FindBy(id = "user")
     private WebElement userName;
@@ -97,6 +97,6 @@ public class RegisterPage extends BasePage {
     }
 
     public String getErrorMessage(){
-        return errorMessage.getText();
+       return errorMessage.getText();
     }
 }

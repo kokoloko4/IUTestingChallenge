@@ -2,7 +2,6 @@ package steps;
 
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
-import helpers.ReadPropertiesFile;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
@@ -16,8 +15,6 @@ public class RunnerHelper {
     public void setup() throws IOException {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
-        ReadPropertiesFile readPropertiesFile = new ReadPropertiesFile();
-        driver.get(readPropertiesFile.getBaseUrl());
     }
 
     @After

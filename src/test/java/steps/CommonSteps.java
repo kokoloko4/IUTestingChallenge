@@ -1,18 +1,18 @@
 package steps;
 
 import cucumber.api.java.en.Given;
-import utils.Helper;
+import helpers.HelperShoppingProcess;
+import helpers.HelperUserAccount;
 
 public class CommonSteps {
 
-    private Helper helper;
-
-    public CommonSteps(){
-        helper = new Helper();
-    }
-
     @Given("^I am in Falabella homepage$")
     public void IAmInFalabellaHomepage(){
-        helper.getHomePage();
+        HelperUserAccount.getHomePage();
+    }
+
+    @Given("^I am in a product page$")
+    public void IAmInAProductPage(){
+        HelperShoppingProcess.getProductPage();
     }
 }
