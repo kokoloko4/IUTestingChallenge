@@ -5,9 +5,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class ProductPage extends BaseProductPage {
+public class ProductPage extends BasePage {
 
     @FindBy(xpath = "//*[@class='fb-product-cta__title']")
     private WebElement productTitle;
@@ -48,10 +47,6 @@ public class ProductPage extends BaseProductPage {
 
     public void closePopupAddBag(){
         driver.findElement(By.id("fb-overlay")).click();
-    }
-
-    private WebDriverWait getWebDriverWait(){
-        return new WebDriverWait(driver, 3);
     }
 
 }

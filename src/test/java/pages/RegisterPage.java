@@ -5,7 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class RegisterPage extends BaseHomePage {
+public class RegisterPage extends BasePage {
 
     @FindBy(id = "user")
     private WebElement userName;

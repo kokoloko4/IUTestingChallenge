@@ -5,9 +5,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class ShoppingPage extends BaseShoppingBagPage {
+public class ShoppingPage extends BasePage {
 
     @FindBy(xpath = "//*[@class='fb-product__action-list__item fb-product__action-list__item--delete"+
             " js-product__action-list--delete']")
@@ -37,9 +36,5 @@ public class ShoppingPage extends BaseShoppingBagPage {
             return true;
         }
         return false;
-    }
-
-    private WebDriverWait getWebDriverWait(){
-        return new WebDriverWait(driver, 5);
     }
 }

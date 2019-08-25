@@ -3,13 +3,23 @@
   <component name="ChangeListManager">
     <list default="true" id="7d2e5556-315f-451e-a589-8ff7506b57d6" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/helpers/HelperSearchProduct.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/helpers/HelperSearchProduct.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/helpers/HelperShoppingBag.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/helpers/HelperShoppingBag.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/helpers/HelperShoppingProcess.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/helpers/HelperShoppingProcess.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/helpers/HelperUserAccount.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/helpers/HelperUserAccount.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pages/BaseHomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/BaseHomePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pages/BaseHomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/BasePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pages/BaseProductPage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pages/BaseShoppingBagPage.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/pages/HomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/HomePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pages/ProductPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/ProductPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pages/RegisterPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/RegisterPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/pages/SearchPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/SearchPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/pages/ShoppingPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/ShoppingPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/steps/RunnerHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/steps/RunnerHelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/steps/useraccountSteps/SaveRegistrySteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/steps/useraccountSteps/SaveRegistrySteps.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/steps/RunnerHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/steps/Hooks.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/steps/useraccountSteps/RegisterSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/steps/useraccountSteps/RegisterSteps.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/utils/ReadPropertiesFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/utils/ReadPropertiesFile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/config.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/config.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/features/UsersAccount.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/UsersAccount.feature" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -76,7 +86,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Cucumber java.Scenario: Delete a product from the shopping bag">
+  <component name="RunManager" selected="Cucumber java.Scenario: Filter the price">
     <configuration name="Scenario: Add a product to the shopping bag" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="4" />
       <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/ShoppingProcess.feature" />
@@ -115,16 +125,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Scenario: Invalid registration" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
-      <option name="ALTERNATIVE_JRE_PATH" value="1.8" />
+    <configuration name="Scenario: Filter the price" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="4" />
-      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/UsersAccount.feature" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/SearchProducts.feature" />
       <option name="GLUE" value="steps" />
-      <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
+      <option name="MAIN_CLASS_NAME" value="cucumber.api.cli.Main" />
       <module name="UITestingChallenge" />
-      <option name="NAME_FILTER" value="^Invalid registration$" />
-      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm4SMFormatter --name &quot;^Invalid registration$&quot;" />
-      <option name="SUGGESTED_NAME" value="Scenario: Invalid registration" />
+      <option name="NAME_FILTER" value="^Filter the price$" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm4SMFormatter --name &quot;^Filter the price$&quot;" />
+      <option name="SUGGESTED_NAME" value="Scenario: Filter the price" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="cucumber.api.cli.*" />
@@ -174,17 +183,17 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Cucumber java.Scenario: Invalid registration" />
-      <item itemvalue="Cucumber java.Scenario: Add a product to the shopping bag" />
       <item itemvalue="Cucumber java.Scenario: Unsuccessful sign in" />
       <item itemvalue="Cucumber java.Scenario: Successful sign out" />
+      <item itemvalue="Cucumber java.Scenario: Filter the price" />
+      <item itemvalue="Cucumber java.Scenario: Add a product to the shopping bag" />
       <item itemvalue="Cucumber java.Scenario: Delete a product from the shopping bag" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Cucumber java.Scenario: Filter the price" />
         <item itemvalue="Cucumber java.Scenario: Delete a product from the shopping bag" />
         <item itemvalue="Cucumber java.Scenario: Add a product to the shopping bag" />
-        <item itemvalue="Cucumber java.Scenario: Invalid registration" />
         <item itemvalue="Cucumber java.Scenario: Successful sign out" />
         <item itemvalue="Cucumber java.Scenario: Unsuccessful sign in" />
       </list>
@@ -202,7 +211,8 @@
       <updated>1566475410418</updated>
       <workItem from="1566615926128" duration="1148000" />
       <workItem from="1566622781618" duration="1210000" />
-      <workItem from="1566657408764" duration="50462000" />
+      <workItem from="1566657408764" duration="50544000" />
+      <workItem from="1566746610064" duration="7493000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1566475638417</created>
@@ -246,7 +256,14 @@
       <option name="project" value="LOCAL" />
       <updated>1566702125386</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Hot fixes">
+      <created>1566709967177</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1566709967177</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -269,7 +286,8 @@
     <MESSAGE value="Initial commit" />
     <MESSAGE value="First try registry feature" />
     <MESSAGE value="User accounts feature, Filter feature and shopping proccess complete." />
-    <option name="LAST_COMMIT_MESSAGE" value="User accounts feature, Filter feature and shopping proccess complete." />
+    <MESSAGE value="Hot fixes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Hot fixes" />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />

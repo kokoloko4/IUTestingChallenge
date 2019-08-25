@@ -9,7 +9,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.List;
 
-public class SearchPage extends BaseHomePage {
+public class SearchPage extends BasePage {
 
     @FindBy(xpath = "//*[@class='fb-masthead__breadcrumb__links']/a")
     private List<WebElement> breadCrumbLinks;
@@ -30,11 +30,18 @@ public class SearchPage extends BaseHomePage {
     public void filterByPrice(String min, String max){
         List<WebElement> filters = filterBar.findElements(By.xpath("//*[@class='fb-filter_container']"));
         filters.get(5).click();
-        List<WebElement> ranges = driver.findElements(By.xpath("//div[contains(@class, 'fb-filter_container')]" +
-                "/div[contains(@class, 'fb-filter-list')]/ul[contains(@class, 'border-filter')]" +
-                "/div[contains(@class, 'content-text-verticalFilter')][1]" +
-                "/li[contains(@class, 'fb-form__input--checkbox fb-form__input-row')]/label"));
-        ranges.get(4).click();
+        List<WebElement> ranges = driver.findElements(By.xpath(
+                "//*[@class='fb-filter_container'][5]//*[@class='fb-filter-list']" +
+                        "//*[@class='content-text-verticalFilter']"));
+        int cont = 0;
+        WebElement filter = null;
+        while(cont < ranges.size() && filter == null){
+            if(ranges.get(cont).findElement(By.xpath(".//input")).getAttribute("name").equals("$"+min+" - $"+max)){
+                filter = ranges.get(cont).findElement(By.xpath(".//label"));
+            }
+            cont++;
+        }
+        filter.click();
     }
 
     public Boolean verifyProductsPrices(int min, int max){

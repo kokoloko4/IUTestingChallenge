@@ -8,8 +8,9 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import sun.awt.windows.WBufferStrategy;
 
-public class RunnerHelper {
+public class Hooks {
 
     public static WebDriver driver;
 
@@ -17,12 +18,10 @@ public class RunnerHelper {
     public void setup() {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
-        driver.get("https://www.falabella.com.co");
     }
 
     @After
     public void exit(){
         driver.quit();
     }
-
 }

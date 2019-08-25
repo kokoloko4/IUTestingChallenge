@@ -9,6 +9,7 @@ public class ReadPropertiesFile {
 
     private static String baseUrl;
     private static String productUrl;
+    private static String shoppingBagUrl;
 
     public ReadPropertiesFile() throws IOException {
         InputStream input = new FileInputStream("src/test/resources/config.properties");
@@ -16,6 +17,7 @@ public class ReadPropertiesFile {
         prop.load(input);
         baseUrl = prop.getProperty("baseUrl");
         productUrl = prop.getProperty("productUrl");
+        shoppingBagUrl = prop.getProperty("shoppingBagUrl");
     }
 
     public String getBaseUrl(){
@@ -23,4 +25,6 @@ public class ReadPropertiesFile {
     }
 
     public String getProductUrl(){return  productUrl;}
+
+    public String getShoppingBag(){return shoppingBagUrl;}
 }

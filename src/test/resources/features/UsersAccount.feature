@@ -16,6 +16,7 @@ Feature: Users account
     And I complete "id" with "123456789" in "register"
     And I complete "gender" with "Hombre" in "register"
     And I complete birthday, day with "2", month with "05", year with "1998"
+    And I check the terms and conditions
     And I try to save my data
     Then I should see an error message
 

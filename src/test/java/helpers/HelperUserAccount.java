@@ -4,8 +4,11 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import pages.HomePage;
 import pages.RegisterPage;
-import steps.RunnerHelper;
+import steps.Hooks;
+import utils.ReadPropertiesFile;
 
+
+import java.io.IOException;
 
 import static org.hamcrest.core.IsEqual.equalTo;
 import static org.junit.Assert.assertThat;
@@ -13,12 +16,18 @@ import static org.junit.Assert.assertTrue;
 
 public class HelperUserAccount {
 
-    private static final WebDriver driver = RunnerHelper.driver;
+    private static final WebDriver driver = Hooks.driver;
     private static HomePage homePage = new HomePage(driver);
     private static RegisterPage registerPage;
 
     public static void getHomePage(){
-        assertTrue("Home page does not load",homePage.loadPage());
+        try {
+            ReadPropertiesFile readPropertiesFile = new ReadPropertiesFile();
+            homePage.setPage(readPropertiesFile.getBaseUrl());
+            assertTrue("Home page does not load",homePage.loadPage());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public static void getLoginPage(){
@@ -47,8 +56,11 @@ public class HelperUserAccount {
     }
 
     public static void completeRegisterForm(){
-        registerPage.checkTermsConditions();
         registerPage.saveData();
+    }
+
+    public static void checkTermsConditions(){
+        registerPage.checkTermsConditions();
     }
 
     public static void verifyThatPhoneIsMissing(){

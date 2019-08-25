@@ -17,6 +17,11 @@ public class RegisterSteps {
         HelperUserAccount.setBirthday(day, month, year);
     }
 
+    @And("^I check the terms and conditions$")
+    public void ICheckTheTermsAndConditions(){
+        HelperUserAccount.checkTermsConditions();
+    }
+
     @And("^I try to save my data$")
     public void ITryToSaveMyData(){
         HelperUserAccount.completeRegisterForm();

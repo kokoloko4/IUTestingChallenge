@@ -7,9 +7,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class HomePage extends BaseHomePage {
+public class HomePage extends BasePage {
 
     @FindBy(id = "header-login-modal")
     private WebElement loginButton;
@@ -93,7 +92,4 @@ public class HomePage extends BaseHomePage {
         return new SearchPage(driver);
     }
 
-    private WebDriverWait getWebDriverWait(){
-        return new WebDriverWait(driver, 3);
-    }
 }
