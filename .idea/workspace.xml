@@ -3,23 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="7d2e5556-315f-451e-a589-8ff7506b57d6" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/helpers/HelperSearchProduct.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/helpers/HelperSearchProduct.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/helpers/HelperShoppingBag.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/helpers/HelperShoppingBag.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/helpers/HelperShoppingProcess.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/helpers/HelperShoppingProcess.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/helpers/HelperUserAccount.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/helpers/HelperUserAccount.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pages/BaseHomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/BasePage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pages/BaseProductPage.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pages/BaseShoppingBagPage.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pages/HomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/HomePage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pages/ProductPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/ProductPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pages/RegisterPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/RegisterPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pages/SearchPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/SearchPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pages/ShoppingPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/ShoppingPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/steps/RunnerHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/steps/Hooks.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/steps/useraccountSteps/RegisterSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/steps/useraccountSteps/RegisterSteps.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/utils/ReadPropertiesFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/utils/ReadPropertiesFile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/config.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/config.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/features/UsersAccount.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/UsersAccount.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -212,7 +196,8 @@
       <workItem from="1566615926128" duration="1148000" />
       <workItem from="1566622781618" duration="1210000" />
       <workItem from="1566657408764" duration="50544000" />
-      <workItem from="1566746610064" duration="7493000" />
+      <workItem from="1566746610064" duration="9075000" />
+      <workItem from="1566811677325" duration="291000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1566475638417</created>
@@ -263,7 +248,14 @@
       <option name="project" value="LOCAL" />
       <updated>1566709967177</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Fix web element filter prices and refactor to access to differents web pages">
+      <created>1566754254445</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1566754254445</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -287,7 +279,19 @@
     <MESSAGE value="First try registry feature" />
     <MESSAGE value="User accounts feature, Filter feature and shopping proccess complete." />
     <MESSAGE value="Hot fixes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Hot fixes" />
+    <MESSAGE value="Fix web element filter prices and refactor to access to differents web pages" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix web element filter prices and refactor to access to differents web pages" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/pages/SearchPage.java</url>
+          <line>61</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
