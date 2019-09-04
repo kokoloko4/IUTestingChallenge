@@ -42,32 +42,37 @@ public class RegisterPage extends BasePage {
     @FindBy(id = "contRegistroHeader")
     private WebElement formTitle;
 
-    public RegisterPage(WebDriver driver) {
+    RegisterPage(WebDriver driver) {
         super(driver);
     }
 
     public Boolean loadPage(){
-        if(formTitle != null){
-            return true;
-        }
-        return false;
+        return formTitle.isDisplayed();
     }
 
     public void fillField(String fieldName, String value){
-        if(fieldName.equals("name")){
-            userName.sendKeys(value);
-        }else if(fieldName.equals("fathersLastName")){
-            fathersLastName.sendKeys(value);
-        }else if(fieldName.equals("mothersLastName")){
-            mothersLastName.sendKeys(value);
-        }else if(fieldName.equals("email")){
-            email.sendKeys(value);
-        }else if(fieldName.equals("password")){
-            password.sendKeys(value);
-        }else if(fieldName.equals("confirmPassword")) {
-            confirmPassword.sendKeys(value);
-        }else if(fieldName.equals("id")){
-            id.sendKeys(value);
+        switch (fieldName) {
+            case "name":
+                userName.sendKeys(value);
+                break;
+            case "fathersLastName":
+                fathersLastName.sendKeys(value);
+                break;
+            case "mothersLastName":
+                mothersLastName.sendKeys(value);
+                break;
+            case "email":
+                email.sendKeys(value);
+                break;
+            case "password":
+                password.sendKeys(value);
+                break;
+            case "confirmPassword":
+                confirmPassword.sendKeys(value);
+                break;
+            case "id":
+                id.sendKeys(value);
+                break;
         }
     }
 

@@ -21,7 +21,7 @@ public class HelperShoppingBag {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        assertTrue("The shopping bag page did not load", shoppingPage.verifyThePageLoad());
+        assertTrue("The shopping bag page did not load", shoppingPage.loadPage());
     }
 
     public static void deleteProduct(){
@@ -29,6 +29,6 @@ public class HelperShoppingBag {
     }
 
     public static void validateEmptyBag(){
-        assertTrue("The product was not deleted", shoppingPage.verifyBagIsEmpty());
+        assertTrue("The product was not deleted", shoppingPage.isBagEmpty());
     }
 }

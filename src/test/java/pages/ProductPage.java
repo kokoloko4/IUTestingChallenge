@@ -15,38 +15,24 @@ public class ProductPage extends BasePage {
     @FindBy(xpath = "//*[@class='fb-masthead-basket__icon icon-bag-green']")
     private WebElement shoppingBagButton;
 
+    private By addedProductPopup = By.xpath("//*[@class='fb-overlay__inject']");
+    private By textAddedProductPopup = By.xpath("//*[@id='fb-overlay']//*[@class='fb-added-to-basket__title']");
+
     public ProductPage(WebDriver driver) {
         super(driver);
     }
 
     public Boolean loadPage(){
-        if(productTitle.isDisplayed()){
-            return true;
-        }
-        return false;
+        return productTitle.isDisplayed();
     }
 
     public void addProductToTheBag(){
         addBagButton.click();
         getWebDriverWait().until(ExpectedConditions
-                .visibilityOfElementLocated(By.xpath("//*[@class='fb-overlay__inject']")));
+                .visibilityOfElementLocated(addedProductPopup));
     }
 
-    public Boolean verifyProductIsInBag(){
-        if(driver.findElement(By.xpath("//*[@id='fb-overlay']//*[@class='fb-added-to-basket__title']"))
-                .getText().equals("Agregado")){
-            return true;
-        }
-        return false;
+    public boolean isTheProductAdded(){
+        return driver.findElement(textAddedProductPopup).getText().equals("Agregado");
     }
-
-    public ShoppingPage clickHoverBag(){
-        shoppingBagButton.click();
-        return new ShoppingPage(driver);
-    }
-
-    public void closePopupAddBag(){
-        driver.findElement(By.id("fb-overlay")).click();
-    }
-
 }

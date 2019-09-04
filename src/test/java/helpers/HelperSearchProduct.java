@@ -18,7 +18,7 @@ public class HelperSearchProduct {
 
     public static void findProduct(String productName){
         searchPage = homePage.findProduct(productName);
-        assertTrue("The search was not successful", searchPage.verifySearchProductPage(productName));
+        assertTrue("The search was not successful", searchPage.isSuccessfulSearch(productName));
     }
 
     public static void filterProducts(String min, String max){
@@ -29,6 +29,6 @@ public class HelperSearchProduct {
 
     public static void verifyProductsPrices(){
         assertTrue("A product is not in range",
-                searchPage.verifyProductsPrices(minPrice, maxPrice));
+                searchPage.arePricesCorrect(minPrice, maxPrice));
     }
 }

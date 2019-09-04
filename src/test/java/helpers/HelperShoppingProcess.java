@@ -31,6 +31,6 @@ public class HelperShoppingProcess {
     }
 
     public static void verifyProduct(){
-        assertTrue("The product was not added to the shopping bag", productPage.verifyProductIsInBag());
+        assertTrue("The product was not added to the shopping bag", productPage.isTheProductAdded());
     }
 }

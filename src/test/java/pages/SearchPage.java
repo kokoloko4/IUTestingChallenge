@@ -15,24 +15,24 @@ public class SearchPage extends BasePage {
     private List<WebElement> breadCrumbLinks;
     @FindBy(xpath = "//*[@id='vertical-filters-custom']")
     private WebElement filterBar;
+    @FindBy(xpath = "//*[@class='fb-filter_container'][5]//*[@class='fb-filter-list']" +
+            "//*[@class='content-text-verticalFilter']")
+    private List<WebElement> ranges;
 
-    public SearchPage(WebDriver driver) {
+    private By typesFilters = By.xpath("//*[@class='fb-filter_container']");
+    private By filterProducts = By.xpath("//*[@id='all-pods']//*[@class='pod-item']");
+    private By priceProduct = By.xpath("//*[@class='fb-price']");
+
+    SearchPage(WebDriver driver) {
         super(driver);
     }
 
-    public Boolean verifySearchProductPage(String product){
-        if(breadCrumbLinks.get(1).getText().equals(" /  Resultados de la búsqueda \"" + product + "\"")){
-            return true;
-        }
-        return false;
+    public boolean isSuccessfulSearch(String product){
+        return breadCrumbLinks.get(1).getText().equals(" /  Resultados de la búsqueda \"" + product + "\"");
     }
 
     public void filterByPrice(String min, String max){
-        List<WebElement> filters = filterBar.findElements(By.xpath("//*[@class='fb-filter_container']"));
-        filters.get(5).click();
-        List<WebElement> ranges = driver.findElements(By.xpath(
-                "//*[@class='fb-filter_container'][5]//*[@class='fb-filter-list']" +
-                        "//*[@class='content-text-verticalFilter']"));
+        filterBar.findElements(typesFilters).get(5).click();
         int cont = 0;
         WebElement filter = null;
         while(cont < ranges.size() && filter == null){
@@ -42,17 +42,15 @@ public class SearchPage extends BasePage {
             cont++;
         }
         filter.click();
+        getWebDriverWait();
     }
 
-    public Boolean verifyProductsPrices(int min, int max){
-        WebDriverWait webDriverWait = new WebDriverWait(driver, 10);
-        List<WebElement> morePages = driver.findElements(By.xpath("//*[@class='icon-right']"));
-        webDriverWait.until(ExpectedConditions.invisibilityOfAllElements(morePages));
-        List<WebElement> foundProducts = driver.findElements(By.xpath("//*[@id='all-pods']//*[@class='pod-item']"));
+    public boolean arePricesCorrect(int min, int max){
+        List<WebElement> foundProducts = driver.findElements(filterProducts);
         int cont = 0;
         boolean isInRange = true;
         while(cont < foundProducts.size() && isInRange){
-            int productPrice = Integer.parseInt(foundProducts.get(cont).findElement(By.xpath("//*[@class='fb-price']"))
+            int productPrice = Integer.parseInt(foundProducts.get(cont).findElement(priceProduct)
                     .getText().split(" ")[1].replace(".",""));
             if(productPrice < min || productPrice > max){
                 isInRange = false;

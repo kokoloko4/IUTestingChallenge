@@ -19,6 +19,15 @@ public class HomePage extends BasePage {
     @FindBy(id="searchQuestionSolr")
     private  WebElement searchBar;
 
+    private By popUpLogin = By.xpath("//*[@class='Modal__modalcontent__2yJz6']");
+    private By logoHomePage = By.xpath("//*[@class='fb-masthead__util-bar__link fb-masthead__util-bar__link--logo']");
+    private By registerButton = By.xpath("//*[@class='Login__createAccount__38c2o']/a");
+    private By loginButtonPopup = By.xpath("//*[@class='Button__main__1NDc9 Button__green__1fhy5']");
+    private By userNameHomePage = By.xpath("//*[@class='fb-masthead-login__name re-design-cl__name']/strong");
+    private By errorMessagePopupLogin = By.xpath("//*[@class='Login__errorText__13IML']");
+    private By logoutButton = By.xpath("//*[contains(@class, 'fb-filter-header__log-out')]");
+    private By textLoginButton = By.xpath("//*[@class='re-design-cl__logged']");
+
     public HomePage(WebDriver driver) {
         super(driver);
     }
@@ -26,21 +35,16 @@ public class HomePage extends BasePage {
     private void loginPopup(){
         loginButton.click();
         getWebDriverWait().until(ExpectedConditions
-                .visibilityOfElementLocated(By.xpath("//*[@class='Modal__modalcontent__2yJz6']")));
+                .visibilityOfElementLocated(popUpLogin));
     }
 
     public Boolean loadPage(){
-        if(driver.findElement(By.xpath(
-                "//*[@class='fb-masthead__util-bar__link fb-masthead__util-bar__link--logo']")).isDisplayed()){
-            return true;
-        }
-        return false;
+        return driver.findElement(logoHomePage).isDisplayed();
     }
 
     public RegisterPage registerUser() {
         loginPopup();
-        WebElement registerButton = driver.findElement(By.xpath("//*[@class='Login__createAccount__38c2o']/a"));
-        registerButton.click();
+        driver.findElement(registerButton).click();
         return new RegisterPage(driver);
     }
 
@@ -57,33 +61,29 @@ public class HomePage extends BasePage {
     }
 
     public void sendLogin(){
-        driver.findElement(By.xpath("//*[@class='Button__main__1NDc9 Button__green__1fhy5']")).click();
+        driver.findElement(loginButtonPopup).click();
     }
 
     public String getNameUserLogin(){
-        getWebDriverWait().until(ExpectedConditions.invisibilityOfElementLocated(
-                By.xpath("//*[@class='Modal__modalcontent__2yJz6']")));
-        return driver.findElement(By.xpath("//*[@class='fb-masthead-login__name re-design-cl__name']/strong")).getText();
+        getWebDriverWait().until(ExpectedConditions.invisibilityOfElementLocated(popUpLogin));
+        return driver.findElement(userNameHomePage).getText();
     }
 
     public String getErrorMessageLogin(){
-        getWebDriverWait().until(ExpectedConditions.visibilityOfElementLocated(
-                By.xpath("//*[@class='Login__errorText__13IML']")));
-        return driver.findElement(By.xpath("//*[@class='Login__errorText__13IML']")).getText();
+        return getWebDriverWait().until(ExpectedConditions
+                .visibilityOfElementLocated(errorMessagePopupLogin)).getText();
     }
 
     public void logout(){
-        getWebDriverWait().until(ExpectedConditions.invisibilityOfElementLocated(
-                By.xpath("//*[@class='Modal__modalcontent__2yJz6']")));
+        getWebDriverWait().until(ExpectedConditions.invisibilityOfElementLocated(popUpLogin));
         Actions actions = new Actions(driver);
         actions.moveToElement(loginButton).perform();
-        driver.findElement(By.xpath("//*[contains(@class, 'fb-filter-header__log-out')]")).click();
+        driver.findElement(logoutButton).click();
     }
 
     public String getTextMainPageLoginButton(){
-        getWebDriverWait().until(ExpectedConditions.textToBe(
-                By.xpath("//*[@class='re-design-cl__logged']"), "Mi cuenta"));
-        return driver.findElement(By.xpath("//*[@class='re-design-cl__logged']")).getText();
+        getWebDriverWait().until(ExpectedConditions.textToBe(textLoginButton, "Mi cuenta"));
+        return driver.findElement(textLoginButton).getText();
     }
 
     public SearchPage findProduct(String product){

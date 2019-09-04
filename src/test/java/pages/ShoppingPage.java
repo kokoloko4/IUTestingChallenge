@@ -12,29 +12,26 @@ public class ShoppingPage extends BasePage {
             " js-product__action-list--delete']")
     private WebElement deleteButton;
 
+    private By titleShoppingBagPage = By.xpath("//*[@class='fb-order-status__title']");
+    private By productInShoppingBag = By.xpath("//*[@class='fb-product-item__container  " +
+            "fb-product-item--has-notification ']");
+    private By textEmptyBag = By.xpath("//*[@class='fb-order-status__empty-basket']");
+
     public ShoppingPage(WebDriver driver) {
         super(driver);
     }
 
-    public Boolean verifyThePageLoad(){
-        if(driver.findElement(By.xpath("//*[@class='fb-order-status__title']")).getText().equals("Bolsa de Compras")){
-            return true;
-        }
-        return false;
+    public boolean loadPage(){
+        return driver.findElement(titleShoppingBagPage).getText().equals("Bolsa de Compras");
     }
 
     public void deleteProductFromShoppingBag(){
         deleteButton.click();
-        getWebDriverWait().until(ExpectedConditions.invisibilityOfElementLocated(By.xpath(
-                "//*[@class='fb-product-item__container  fb-product-item--has-notification ']"
-        )));
+        getWebDriverWait().until(ExpectedConditions.invisibilityOfElementLocated(productInShoppingBag));
     }
 
-    public Boolean verifyBagIsEmpty(){
-        if(driver.findElement(By.xpath("//*[@class='fb-order-status__empty-basket']")).getText().equals(
-                "Tu Bolsa de Compras está vacía. Agrega productos ahora>>\nSeguir comprando")){
-            return true;
-        }
-        return false;
+    public boolean isBagEmpty(){
+        return driver.findElement(textEmptyBag).getText().equals("Tu Bolsa de Compras está vacía. " +
+                "Agrega productos ahora>>\nSeguir comprando");
     }
 }
