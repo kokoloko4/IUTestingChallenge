@@ -1,8 +1,10 @@
 package steps;
 
 import cucumber.api.java.en.And;
+import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import helpers.PropertyHelper;
 import pages.HomePage;
 import pages.RegisterPage;
 
@@ -15,16 +17,22 @@ import static org.junit.Assert.assertTrue;
 public class AccountSteps{
 
     private static HomePage homePage = HomePage.getInstance();
-    private static RegisterPage registerPage;
+    private static RegisterPage registerPage = RegisterPage.getInstance();
+
+    @Given("^I am in Falabella homepage$")
+    public void iAmInFalabellaHomepage(){
+        homePage.setPage(PropertyHelper.getUrl("homePageUrl"));
+        assertTrue("Home page does not load",homePage.loadPage());
+    }
 
     @When("^I enter in login form$")
     public void iEnterInLoginForm(){
-        CommonSteps.homePage.login();
+        homePage.login();
     }
 
     @When("^I enter to register page$")
     public void iEnterToRegisterPage(){
-        registerPage = homePage.registerUser();
+        homePage.registerUser();
         assertTrue("Register page did not load", registerPage.isPageLoaded());
     }
 
@@ -63,6 +71,7 @@ public class AccountSteps{
     public void iShouldSeeAnErrorMessage(String errorMessae){
         assertThat("The message of missing phone number is missing",
                 registerPage.getErrorMessage(), equalTo(errorMessae));
+        homePage = null;
     }
 
     @Then("^I should be see \"([^\"]*)\" in the homepage$")

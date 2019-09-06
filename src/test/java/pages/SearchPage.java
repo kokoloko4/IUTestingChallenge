@@ -6,6 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import steps.Hooks;
 
+import javax.xml.transform.sax.SAXSource;
 import java.util.List;
 
 public class SearchPage extends BasePage {
@@ -46,6 +47,7 @@ public class SearchPage extends BasePage {
     }
 
     public boolean arePricesCorrect(int min, int max){
+        getWebDriverWait();
         List<WebElement> foundProducts = driver.findElements(filterProducts);
         int cont = 0;
         boolean isInRange = true;

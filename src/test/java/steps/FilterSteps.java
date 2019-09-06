@@ -12,13 +12,13 @@ public class FilterSteps {
 
     private static HomePage homePage = HomePage.getInstance();
 
-    private static SearchPage searchPage;
+    private static SearchPage searchPage = SearchPage.getInstance();
     private int maxPrice;
     private int minPrice;
 
     @And("^I search for \"([^\"]*)\"$")
     public void iSearchForWord(String word){
-        searchPage = homePage.findProduct(word);
+        homePage.findProduct(word);
         assertTrue("The search was not successful", searchPage.isSuccessfulSearch(word));
     }
 

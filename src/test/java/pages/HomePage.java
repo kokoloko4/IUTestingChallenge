@@ -52,10 +52,9 @@ public class HomePage extends BasePage {
         return driver.findElement(logoHomePage).isDisplayed();
     }
 
-    public RegisterPage registerUser() {
+    public void registerUser() {
         loginPopup();
         driver.findElement(registerButton).click();
-        return new RegisterPage(driver);
     }
 
     public void login(){
@@ -97,10 +96,10 @@ public class HomePage extends BasePage {
         return driver.findElement(textLoginButton).getText();
     }
 
-    public SearchPage findProduct(String product){
+    public void findProduct(String product){
         searchBar.sendKeys(product);
         searchBar.sendKeys(Keys.ENTER);
-        return new SearchPage(driver);
+        getWebDriverWait();
     }
 
 }
