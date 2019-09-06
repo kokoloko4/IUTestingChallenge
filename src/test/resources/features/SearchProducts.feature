@@ -1,4 +1,4 @@
-Feature: Search products in falabella page
+Feature: Search products
   As an user I want to find products
 
   Scenario: Filter the price

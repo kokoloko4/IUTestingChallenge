@@ -4,8 +4,11 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import steps.Hooks;
 
 public class RegisterPage extends BasePage {
+
+    private static RegisterPage instance;
 
     @FindBy(id = "user")
     private WebElement userName;
@@ -46,7 +49,14 @@ public class RegisterPage extends BasePage {
         super(driver);
     }
 
-    public Boolean loadPage(){
+    public static RegisterPage getInstance() {
+        if (instance == null) {
+            instance = new RegisterPage(Hooks.driver);
+        }
+        return instance;
+    }
+
+    public boolean isPageLoaded(){
         return formTitle.isDisplayed();
     }
 

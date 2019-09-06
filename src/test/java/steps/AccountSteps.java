@@ -3,72 +3,83 @@ package steps;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
-import helpers.HelperUserAccount;
+import pages.HomePage;
+import pages.RegisterPage;
 
-public class AccountSteps {
+import java.util.Map;
+
+import static org.hamcrest.core.IsEqual.equalTo;
+import static org.junit.Assert.assertThat;
+import static org.junit.Assert.assertTrue;
+
+public class AccountSteps{
+
+    private static HomePage homePage = HomePage.getInstance();
+    private static RegisterPage registerPage;
 
     @When("^I enter in login form$")
-    public void IEnterInLoginForm(){
-        HelperUserAccount.getLoginPage();
+    public void iEnterInLoginForm(){
+        CommonSteps.homePage.login();
     }
 
     @When("^I enter to register page$")
-    public void IEnterToRegisterPage(){
-        HelperUserAccount.getRegisterPage();
-    }
-
-    @When("^I complete birthday, day with \"([^\"]*)\", " +
-            "month with \"([^\"]*)\", year with \"([^\"]*)\"$")
-    public void setBirthday(String day, String month, String year){
-        HelperUserAccount.setBirthday(day, month, year);
+    public void iEnterToRegisterPage(){
+        registerPage = homePage.registerUser();
+        assertTrue("Register page did not load", registerPage.isPageLoaded());
     }
 
     @When("^I sign out$")
-    public void ISignOut(){
-        HelperUserAccount.logout();
+    public void iSignOut(){
+        homePage.logout();
     }
 
     @And("^I click hover login button$")
-    public void IClickHoverLoginButton(){
-        HelperUserAccount.completeLoginForm();
+    public void iClickHoverLoginButton(){
+        homePage.sendLogin();
     }
 
-    @And("^I complete \"([^\"]*)\" with \"([^\"]*)\" in \"([^\"]*)\"$")
-    public void ICompleteField(String fieldName, String value, String page){
-        if (page.equals("register") && fieldName.equals("gender")){
-            HelperUserAccount.selectGender(value);
-        } else {
-            HelperUserAccount.completeField(fieldName, value, page);
+    @And("^I complete the registration form$")
+    public void iCompleteField(Map<String,String> registrationInfo){
+        for(String key: registrationInfo.keySet()){
+            registerPage.fillField(key, registrationInfo.get(key));
         }
-    }
-
-    @And("^I check the terms and conditions$")
-    public void ICheckTheTermsAndConditions(){
-        HelperUserAccount.checkTermsConditions();
+        registerPage.putBirthday(registrationInfo.get("dayBirthday"), registrationInfo.get("monthBirthday"),
+                registrationInfo.get("yearBirthday"));
+        registerPage.selectGender(registrationInfo.get("gender"));
+        registerPage.checkTermsConditions();
     }
 
     @And("^I try to save my data$")
-    public void ITryToSaveMyData(){
-        HelperUserAccount.completeRegisterForm();
+    public void iTryToSaveMyData(){
+        registerPage.saveData();
     }
 
-    @Then("^I should see an error message$")
-    public void IShouldSeeAnErrorMessage(){
-        HelperUserAccount.verifyThatPhoneIsMissing();
+    @And("I complete \"([^\"]*)\" with \"([^\"]*)\"")
+    public void iCompleteWith(String field, String value) {
+        homePage.fillField(field, value);
+    }
+
+    @Then("^I should see an error message \"([^\"]*)\"$")
+    public void iShouldSeeAnErrorMessage(String errorMessae){
+        assertThat("The message of missing phone number is missing",
+                registerPage.getErrorMessage(), equalTo(errorMessae));
     }
 
     @Then("^I should be see \"([^\"]*)\" in the homepage$")
-    public void IShouldBeSignedIn(String name){
-        HelperUserAccount.verifyUserLogin(name);
+    public void iShouldBeSignedIn(String name){
+        assertThat(String.format("The expected name is %s but was %s", name, homePage.getNameUserLogin()),
+                homePage.getNameUserLogin() , equalTo(name));
     }
 
-    @Then("^I should see a sign in error$")
-    public void IShouldSeeASignInError(){
-        HelperUserAccount.verifyErrorLogin();
+    @Then("^I should see a sign in error \"([^\"]*)\"$")
+    public void iShouldSeeASignInError(String errorMessage){
+        assertThat("The login error message was not found", homePage.getErrorMessageLogin(),
+                equalTo(errorMessage));
     }
 
     @Then("^I should be signed out$")
-    public void IShouldBeSignedOut(){
-        HelperUserAccount.verifyUserIsLogout();
+    public void iShouldBeSignedOut(){
+        assertThat("Log out was not successful", homePage.getTextMainPageLoginButton(),
+                equalTo("Mi cuenta"));
     }
 }

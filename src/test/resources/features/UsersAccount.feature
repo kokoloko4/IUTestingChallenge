@@ -5,39 +5,41 @@ Feature: Users account
   Background:
     Given I am in Falabella homepage
 
-  Scenario: Invalid registration
+  Scenario: Invalid registration without fill phone number
     When I enter to register page
-    And I complete "name" with "Andres" in "register"
-    And I complete "fathersLastName" with "Cocunubo" in "register"
-    And I complete "mothersLastName" with "Quintero" in "register"
-    And I complete "email" with "example@example.com" in "register"
-    And I complete "password" with "clave123" in "register"
-    And I complete "confirmPassword" with "clave123" in "register"
-    And I complete "id" with "123456789" in "register"
-    And I complete "gender" with "Hombre" in "register"
-    And I complete birthday, day with "2", month with "05", year with "1998"
-    And I check the terms and conditions
+    And I complete the registration form
+    |name           |Andres             |
+    |fathersLastName|Cocunubo           |
+    |mothersLastName|Quintero           |
+    |email          |example@example.com|
+    |password       |clave123           |
+    |confirmPassword|clave123           |
+    |id             |123456789          |
+    |gender         |Hombre             |
+    |dayBirthday    |2                  |
+    |monthBirthday  |05                 |
+    |yearBirthday   |1998               |
     And I try to save my data
-    Then I should see an error message
+    Then I should see an error message "Debes ingresar un celular"
 
   Scenario:Successful sign in
     When I enter in login form
-    And I complete "email" with "challengecorreo@gmail.com" in "login"
-    And I complete "password" with "clavechallenge" in "login"
+    And I complete "email" with "challengecorreo@gmail.com"
+    And I complete "password" with "clavechallenge"
     And I click hover login button
     Then I should be see "David" in the homepage
 
   Scenario: Unsuccessful sign in
     When I enter in login form
-    And I complete "email" with "challengecorreo@gmail.com" in "login"
-    And I complete "password" with "claveincorrecta" in "login"
+    And I complete "email" with "challengecorreo@gmail.com"
+    And I complete "password" with "claveincorrecta"
     And I click hover login button
-    Then I should see a sign in error
+    Then I should see a sign in error "E-mail o clave incorrecta. Por favor inténtalo nuevamente."
 
   Scenario: Successful sign out
     When I enter in login form
-    And I complete "email" with "challengecorreo@gmail.com" in "login"
-    And I complete "password" with "clavechallenge" in "login"
+    And I complete "email" with "challengecorreo@gmail.com"
+    And I complete "password" with "clavechallenge"
     And I click hover login button
     And I sign out
     Then I should be signed out

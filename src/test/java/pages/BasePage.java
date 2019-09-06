@@ -6,9 +6,9 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class BasePage {
 
-    protected WebDriver driver;
+    WebDriver driver;
 
-    public BasePage(WebDriver driver) {
+    BasePage(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(this.driver, this);
     }
@@ -17,7 +17,7 @@ public class BasePage {
         driver.get(url);
     }
 
-    public WebDriverWait getWebDriverWait(){
+    WebDriverWait getWebDriverWait(){
         return new WebDriverWait(driver, 10);
     }
 

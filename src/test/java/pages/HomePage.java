@@ -7,8 +7,11 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import steps.Hooks;
 
 public class HomePage extends BasePage {
+
+    private static HomePage instance;
 
     @FindBy(id = "header-login-modal")
     private WebElement loginButton;
@@ -28,8 +31,15 @@ public class HomePage extends BasePage {
     private By logoutButton = By.xpath("//*[contains(@class, 'fb-filter-header__log-out')]");
     private By textLoginButton = By.xpath("//*[@class='re-design-cl__logged']");
 
-    public HomePage(WebDriver driver) {
+    private HomePage(WebDriver driver) {
         super(driver);
+    }
+
+    public static HomePage getInstance() {
+        if (instance == null) {
+            instance = new HomePage(Hooks.driver);
+        }
+        return instance;
     }
 
     private void loginPopup(){
@@ -62,6 +72,7 @@ public class HomePage extends BasePage {
 
     public void sendLogin(){
         driver.findElement(loginButtonPopup).click();
+        getWebDriverWait();
     }
 
     public String getNameUserLogin(){

@@ -7,24 +7,34 @@ import java.util.Properties;
 
 public class ReadPropertiesFile {
 
-    private static String baseUrl;
-    private static String productUrl;
-    private static String shoppingBagUrl;
+    private String fileName;
+    private InputStream input;
+    private Properties properties;
+    private static String BASE_PATH = "src/test/resources/";
 
-    public ReadPropertiesFile() throws IOException {
-        InputStream input = new FileInputStream("src/test/resources/config.properties");
-        Properties prop = new Properties();
-        prop.load(input);
-        baseUrl = prop.getProperty("baseUrl");
-        productUrl = prop.getProperty("productUrl");
-        shoppingBagUrl = prop.getProperty("shoppingBagUrl");
+    public ReadPropertiesFile(String fileName) {
+        this.fileName = fileName;
     }
 
-    public String getBaseUrl(){
-        return baseUrl;
+    public  void openFile(){
+        try {
+            input = new FileInputStream(BASE_PATH + this.fileName +".properties");
+            properties= new Properties();
+            properties.load(input);
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    public void closeFile(){
+        try {
+            input.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    public String getProperty(String property){
+        return  properties.getProperty(property);
     }
 
-    public String getProductUrl(){return  productUrl;}
-
-    public String getShoppingBag(){return shoppingBagUrl;}
 }

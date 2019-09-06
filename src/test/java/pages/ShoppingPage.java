@@ -5,8 +5,11 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import steps.Hooks;
 
 public class ShoppingPage extends BasePage {
+
+    private static ShoppingPage instance;
 
     @FindBy(xpath = "//*[@class='fb-product__action-list__item fb-product__action-list__item--delete"+
             " js-product__action-list--delete']")
@@ -17,8 +20,15 @@ public class ShoppingPage extends BasePage {
             "fb-product-item--has-notification ']");
     private By textEmptyBag = By.xpath("//*[@class='fb-order-status__empty-basket']");
 
-    public ShoppingPage(WebDriver driver) {
+    private ShoppingPage(WebDriver driver) {
         super(driver);
+    }
+
+    public static ShoppingPage getInstance() {
+        if (instance == null) {
+            instance = new ShoppingPage(Hooks.driver);
+        }
+        return instance;
     }
 
     public boolean loadPage(){
