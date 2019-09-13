@@ -10,16 +10,15 @@ import static org.junit.Assert.assertTrue;
 
 public class FilterSteps {
 
-    private static HomePage homePage = HomePage.getInstance();
+    private static HomePage homePage = new HomePage();
+    private static SearchPage searchPage = new SearchPage();
 
-    private static SearchPage searchPage = SearchPage.getInstance();
     private int maxPrice;
     private int minPrice;
 
     @And("^I search for \"([^\"]*)\"$")
     public void iSearchForWord(String word){
         homePage.findProduct(word);
-        assertTrue("The search was not successful", searchPage.isSuccessfulSearch(word));
     }
 
     @When("^I apply the filter for price between \"([^\"]*)\" and \"([^\"]*)\"$")

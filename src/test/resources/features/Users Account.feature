@@ -2,12 +2,9 @@ Feature: Users account
   In order to perform actions in Falabella page
   I have to create an user account to login or logout
 
-  Background:
-    Given I am in Falabella homepage
-
   Scenario: Invalid registration without fill phone number
-    When I enter to register page
-    And I complete the registration form
+    Given I am in Falabella registration page
+    When I complete the registration form
     |name           |Andres             |
     |fathersLastName|Cocunubo           |
     |mothersLastName|Quintero           |
@@ -23,6 +20,7 @@ Feature: Users account
     Then I should see an error message "Debes ingresar un celular"
 
   Scenario:Successful sign in
+    Given I am in Falabella homepage
     When I enter in login form
     And I complete "email" with "challengecorreo@gmail.com"
     And I complete "password" with "clavechallenge"
@@ -30,6 +28,7 @@ Feature: Users account
     Then I should be see "David" in the homepage
 
   Scenario: Unsuccessful sign in
+    Given I am in Falabella homepage
     When I enter in login form
     And I complete "email" with "challengecorreo@gmail.com"
     And I complete "password" with "claveincorrecta"
@@ -37,6 +36,7 @@ Feature: Users account
     Then I should see a sign in error "E-mail o clave incorrecta. Por favor inténtalo nuevamente."
 
   Scenario: Successful sign out
+    Given I am in Falabella homepage
     When I enter in login form
     And I complete "email" with "challengecorreo@gmail.com"
     And I complete "password" with "clavechallenge"

@@ -1,14 +1,10 @@
 package pages;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import steps.Hooks;
 
 public class RegisterPage extends BasePage {
-
-    private static RegisterPage instance;
 
     @FindBy(id = "user")
     private WebElement userName;
@@ -45,47 +41,55 @@ public class RegisterPage extends BasePage {
     @FindBy(id = "contRegistroHeader")
     private WebElement formTitle;
 
-    RegisterPage(WebDriver driver) {
-        super(driver);
+    public RegisterPage() {
+        super();
     }
 
-    public static RegisterPage getInstance() {
-        if (instance == null) {
-            instance = new RegisterPage(Hooks.driver);
-        }
-        return instance;
-    }
-
-    public boolean isPageLoaded(){
+    @Override
+    public boolean isPageLoaded() {
         return formTitle.isDisplayed();
     }
 
+    /**
+     * @param fieldName The name of the field in the form
+     * @param value The value that will be send to the field in the form
+     */
     public void fillField(String fieldName, String value){
         switch (fieldName) {
             case "name":
+                userName.clear();
                 userName.sendKeys(value);
                 break;
             case "fathersLastName":
+                fathersLastName.clear();
                 fathersLastName.sendKeys(value);
                 break;
             case "mothersLastName":
+                mothersLastName.clear();
                 mothersLastName.sendKeys(value);
                 break;
             case "email":
+                email.clear();
                 email.sendKeys(value);
                 break;
             case "password":
+                password.clear();
                 password.sendKeys(value);
                 break;
             case "confirmPassword":
+                confirmPassword.clear();
                 confirmPassword.sendKeys(value);
                 break;
             case "id":
+                id.clear();
                 id.sendKeys(value);
                 break;
         }
     }
 
+    /**
+     * @param gender The gender that will be check in the form
+     */
     public void selectGender(String gender){
         if(gender.equals("Hombre")){
             maleGender.click();
@@ -94,6 +98,11 @@ public class RegisterPage extends BasePage {
         }
     }
 
+    /**
+     * @param dayValue The day that will be selected in the combo box at form
+     * @param monthValue The month that will be selected in the combo box at form
+     * @param yearValue The year that will be selected in the combo box at form
+     */
     public void putBirthday(String dayValue, String monthValue, String yearValue){
         day.click();
         driver.findElement(By.xpath("//*[@id='day']//*[@value='"+dayValue+"']")).click();
@@ -103,14 +112,23 @@ public class RegisterPage extends BasePage {
         driver.findElement(By.xpath("//*[@id='year']//*[@value='"+yearValue+"']")).click();
     }
 
+    /**
+     * Check the terms and conditions checkbox
+     */
     public void checkTermsConditions(){
         termsConditions.click();
     }
 
+    /**
+     * Click hover "Guardar" button at the registration form
+     */
     public void saveData(){
         saveRegistry.click();
     }
 
+    /**
+     * @return The error message that appeas whn the cellphone is empty
+     */
     public String getErrorMessage(){
        return errorMessage.getText();
     }

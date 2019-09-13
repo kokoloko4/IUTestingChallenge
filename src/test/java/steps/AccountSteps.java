@@ -4,9 +4,9 @@ import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
-import helpers.PropertyHelper;
 import pages.HomePage;
 import pages.RegisterPage;
+import utils.PageUrls;
 
 import java.util.Map;
 
@@ -16,24 +16,29 @@ import static org.junit.Assert.assertTrue;
 
 public class AccountSteps{
 
-    private static HomePage homePage = HomePage.getInstance();
-    private static RegisterPage registerPage = RegisterPage.getInstance();
+    private static HomePage homePage;
+    private static RegisterPage registerPage;
+
+    public AccountSteps() {
+        homePage = new HomePage();
+        registerPage = new RegisterPage();
+    }
 
     @Given("^I am in Falabella homepage$")
     public void iAmInFalabellaHomepage(){
-        homePage.setPage(PropertyHelper.getUrl("homePageUrl"));
-        assertTrue("Home page does not load",homePage.loadPage());
+        homePage.openPage(PageUrls.getHomePageUrl());
+        assertTrue("Home page does not loaded",homePage.isPageLoaded());
+    }
+
+    @Given("^I am in Falabella registration page$")
+    public void iAminRegistration(){
+        registerPage.openPage(PageUrls.getRegistrationPageUrl());
+        assertTrue("Registration page is not loaded", registerPage.isPageLoaded());
     }
 
     @When("^I enter in login form$")
     public void iEnterInLoginForm(){
         homePage.login();
-    }
-
-    @When("^I enter to register page$")
-    public void iEnterToRegisterPage(){
-        homePage.registerUser();
-        assertTrue("Register page did not load", registerPage.isPageLoaded());
     }
 
     @When("^I sign out$")
@@ -46,7 +51,7 @@ public class AccountSteps{
         homePage.sendLogin();
     }
 
-    @And("^I complete the registration form$")
+    @When("^I complete the registration form$")
     public void iCompleteField(Map<String,String> registrationInfo){
         for(String key: registrationInfo.keySet()){
             registerPage.fillField(key, registrationInfo.get(key));
